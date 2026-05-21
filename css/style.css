@@ -1,0 +1,447 @@
+/* ============================================
+   ШКОЛЬНЫЙ АЛЬБОМ — стили
+   Винтажный стиль: крафт, полароиды, рукопись
+   ============================================ */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #f4ecd8;
+  background:
+    radial-gradient(ellipse at top, #3a2515 0%, #1a0e08 60%, #0a0503 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 16px 60px;
+  overflow-x: hidden;
+}
+
+/* --- Заголовок страницы (вне альбома) --- */
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+  user-select: none;
+}
+.hero-title {
+  font-family: 'Marck Script', cursive;
+  font-size: 44px;
+  margin: 0;
+  color: #f0d9a8;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  font-weight: 400;
+}
+.hero-sub {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  color: #c4a676;
+  opacity: 0.85;
+}
+
+/* --- Сцена с альбомом --- */
+.scene {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  perspective: 2000px;
+}
+
+#album {
+  /* Тень под книгой */
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6));
+}
+
+/* --- Базовая страница (бумага) --- */
+.page {
+  background-color: #f4ecd8;
+  color: #3a2817;
+  overflow: hidden;
+  /* Мягкая текстура старой бумаги */
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(139, 90, 43, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139, 90, 43, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(212, 178, 122, 0.08) 0%, transparent 60%);
+}
+
+.page-content {
+  width: 100%;
+  height: 100%;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ============================================
+   ОБЛОЖКА (тёмно-бордовая, "кожаная")
+   ============================================ */
+.page-cover {
+  background:
+    radial-gradient(ellipse at 30% 30%, #7a3818 0%, transparent 60%),
+    linear-gradient(135deg, #5a2a10 0%, #3a1a08 100%);
+  color: #f0d9a8;
+  position: relative;
+}
+
+.page-cover::before {
+  /* Тиснёная рамка */
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 2px double rgba(240, 217, 168, 0.35);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.page-cover::after {
+  /* Тонкие "блики" кожи */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 220, 170, 0.08), transparent 50%),
+    radial-gradient(circle at 10% 90%, rgba(0, 0, 0, 0.25), transparent 60%);
+  pointer-events: none;
+}
+
+.cover-content {
+  text-align: center;
+}
+
+.cover-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.cover-eyebrow {
+  font-family: 'Marck Script', cursive;
+  font-size: 22px;
+  color: #d4a866;
+  margin: 0 0 6px;
+  letter-spacing: 2px;
+}
+
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #f0d9a8;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.3);
+}
+
+.cover-divider {
+  margin: 22px auto;
+  font-size: 22px;
+  color: #d4a866;
+  letter-spacing: 8px;
+}
+
+.cover-class {
+  font-family: 'Marck Script', cursive;
+  font-size: 28px;
+  color: #f0d9a8;
+  margin: 6px 0 4px;
+}
+
+.cover-year {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 6px;
+  font-size: 16px;
+  color: #d4a866;
+  margin: 0;
+}
+
+.back-cover .back-text {
+  font-family: 'Marck Script', cursive;
+  font-size: 26px;
+  color: #f0d9a8;
+  margin: 18px 0 24px;
+  line-height: 1.4;
+}
+
+/* --- Форзацы (внутренняя сторона обложки) --- */
+.endpaper {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(139, 90, 43, 0.04) 0px,
+      rgba(139, 90, 43, 0.04) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+}
+.dedication {
+  font-family: 'Marck Script', cursive;
+  font-size: 26px;
+  text-align: center;
+  color: #5a3820;
+  line-height: 1.5;
+  max-width: 80%;
+}
+.dedication.small { font-size: 22px; }
+
+/* --- Титул --- */
+.title-page {
+  justify-content: center;
+}
+.title-h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 38px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  color: #3a2817;
+}
+.title-sub {
+  font-family: 'Marck Script', cursive;
+  font-size: 22px;
+  margin: 0 0 20px;
+  color: #6b4423;
+}
+.ornament {
+  letter-spacing: 8px;
+  color: #a0734a;
+  margin: 8px 0;
+}
+
+/* ============================================
+   ЗАГОЛОВКИ И ПОДПИСИ СТРАНИЦ
+   ============================================ */
+.page-heading {
+  font-family: 'Marck Script', cursive;
+  font-weight: 700;
+  font-size: 32px;
+  color: #6b3410;
+  text-align: center;
+  margin: 0 0 18px;
+  position: relative;
+  align-self: stretch;
+}
+.page-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #a0734a;
+  margin: 6px auto 0;
+}
+.page-heading.center { text-align: center; }
+
+.page-number {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #a0734a;
+  margin: 0;
+}
+
+.handwriting {
+  font-family: 'Caveat', cursive;
+  color: #4a2e15;
+}
+.note {
+  font-size: 22px;
+  margin: 14px 0 0;
+  text-align: center;
+  max-width: 85%;
+  line-height: 1.4;
+}
+.note.small { font-size: 18px; }
+
+.big-quote {
+  font-size: 38px;
+  text-align: center;
+  line-height: 1.2;
+  margin: 18px 0;
+  color: #5a3820;
+}
+
+.signature {
+  font-family: 'Marck Script', cursive;
+  font-size: 24px;
+  color: #6b4423;
+  margin-top: 14px;
+}
+
+.final-page { justify-content: center; }
+
+/* ============================================
+   ФОТО-РАМКИ (полароиды)
+   ============================================ */
+.photo-frame {
+  position: relative;
+  background: #fdfaf2;
+  padding: 10px 10px 36px 10px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    0 8px 18px rgba(0, 0, 0, 0.18);
+  display: inline-block;
+  max-width: 100%;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.18) saturate(0.95) contrast(0.95);
+}
+
+.photo-caption {
+  display: block;
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  color: #4a2e15;
+}
+
+/* Уголки для крепления (имитация) */
+.photo-frame::before,
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background:
+    linear-gradient(135deg, transparent 50%, rgba(80, 50, 30, 0.55) 50%, rgba(80, 50, 30, 0.35) 70%, transparent 70%);
+  pointer-events: none;
+}
+.photo-frame::before { top: 0; left: 0; transform: rotate(0deg); }
+.photo-frame::after { top: 0; right: 0; transform: rotate(90deg); }
+
+/* Размеры */
+.photo-large {
+  width: 78%;
+  max-width: 320px;
+}
+.photo-large img { aspect-ratio: 4/5; }
+
+.photo-small img { aspect-ratio: 1/1; }
+
+/* Лёгкие наклоны */
+.rotate-left  { transform: rotate(-2.5deg); }
+.rotate-right { transform: rotate(2.5deg); }
+
+/* Сетки фото */
+.photo-grid {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  align-content: center;
+  justify-items: center;
+  margin: 8px 0;
+}
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.grid-2 .photo-frame { width: 92%; }
+
+.grid-2-vertical {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.grid-2-vertical .photo-frame { width: 78%; }
+
+.grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.grid-3 .photo-frame { width: 95%; padding: 6px 6px 22px 6px; }
+.grid-3 .photo-caption { font-size: 14px; bottom: 4px; }
+
+/* ============================================
+   КНОПКИ УПРАВЛЕНИЯ
+   ============================================ */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 26px;
+  user-select: none;
+}
+
+.ctrl-btn {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #f0d9a8 0%, #d4a866 100%);
+  color: #3a1a08;
+  border: 1px solid #6b3410;
+  padding: 10px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ctrl-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+.ctrl-btn:active { transform: translateY(0); }
+.ctrl-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.page-info {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: #d4a866;
+  letter-spacing: 2px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.hint {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #8a6a44;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+@media (max-width: 720px) {
+  .hero-title { font-size: 32px; }
+  .hero-sub { font-size: 12px; }
+  .cover-title { font-size: 30px; letter-spacing: 2px; }
+  .cover-class { font-size: 22px; }
+  .title-h { font-size: 26px; }
+  .page-heading { font-size: 24px; }
+  .note { font-size: 18px; }
+  .big-quote { font-size: 28px; }
+  .photo-large { width: 88%; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .ctrl-btn { font-size: 12px; padding: 8px 14px; }
+}

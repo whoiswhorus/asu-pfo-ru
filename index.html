@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Школьный альбом</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Marck+Script&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1 class="hero-title">Школьный альбом</h1>
+    <p class="hero-sub">Перелистывай страницы — кликом по уголку или кнопками внизу</p>
+  </header>
+
+  <main class="scene">
+    <div id="album">
+
+      <!-- ========== ОБЛОЖКА (передняя) ========== -->
+      <div class="page page-cover page-cover-top" data-density="hard">
+        <div class="page-content cover-content">
+          <div class="cover-frame">
+            <p class="cover-eyebrow">— наш —</p>
+            <h2 class="cover-title">Школьный<br>Альбом</h2>
+            <div class="cover-divider">✦</div>
+            <p class="cover-class">10 «А» класс</p>
+            <p class="cover-year">2024 — 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== ВНУТРЕННЯЯ СТОРОНА ОБЛОЖКИ ========== -->
+      <div class="page" data-density="hard">
+        <div class="page-content endpaper">
+          <p class="dedication">«Эти страницы хранят<br>наши лучшие моменты —<br>смех, дружбу и приключения»</p>
+        </div>
+      </div>
+
+      <!-- ========== ТИТУЛ ========== -->
+      <div class="page">
+        <div class="page-content title-page">
+          <h2 class="title-h">Наш класс</h2>
+          <p class="title-sub">самые яркие воспоминания</p>
+          <div class="ornament">⁕ ⁕ ⁕</div>
+          <p class="page-number">1</p>
+        </div>
+      </div>
+
+      <!-- ========== РАЗВОРОТ 1: 1 сентября ========== -->
+      <div class="page">
+        <div class="page-content">
+          <h3 class="page-heading">1 сентября</h3>
+          <div class="photo-frame photo-large rotate-left">
+            <img src="https://picsum.photos/seed/school1/600/700" alt="">
+            <span class="photo-caption">первый звонок</span>
+          </div>
+          <p class="page-number">2</p>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content">
+          <div class="photo-grid grid-2">
+            <div class="photo-frame rotate-right">
+              <img src="https://picsum.photos/seed/school2/500/600" alt="">
+              <span class="photo-caption">торжественная линейка</span>
+            </div>
+            <div class="photo-frame rotate-left">
+              <img src="https://picsum.photos/seed/school3/500/600" alt="">
+              <span class="photo-caption">встреча с друзьями</span>
+            </div>
+          </div>
+          <p class="handwriting note">«День, когда всё начинается заново...»</p>
+          <p class="page-number">3</p>
+        </div>
+      </div>
+
+      <!-- ========== РАЗВОРОТ 2: уроки ========== -->
+      <div class="page">
+        <div class="page-content">
+          <h3 class="page-heading">Уроки</h3>
+          <div class="photo-grid grid-3">
+            <div class="photo-frame photo-small rotate-left">
+              <img src="https://picsum.photos/seed/school4/400/400" alt="">
+            </div>
+            <div class="photo-frame photo-small rotate-right">
+              <img src="https://picsum.photos/seed/school5/400/400" alt="">
+            </div>
+            <div class="photo-frame photo-small rotate-left">
+              <img src="https://picsum.photos/seed/school6/400/400" alt="">
+            </div>
+          </div>
+          <p class="handwriting note">математика, физика и немного скуки</p>
+          <p class="page-number">4</p>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content">
+          <div class="photo-frame photo-large rotate-right">
+            <img src="https://picsum.photos/seed/school7/600/700" alt="">
+            <span class="photo-caption">любимый кабинет</span>
+          </div>
+          <p class="page-number">5</p>
+        </div>
+      </div>
+
+      <!-- ========== РАЗВОРОТ 3: перемены ========== -->
+      <div class="page">
+        <div class="page-content">
+          <h3 class="page-heading">Перемены</h3>
+          <div class="photo-grid grid-2-vertical">
+            <div class="photo-frame rotate-left">
+              <img src="https://picsum.photos/seed/school8/500/350" alt="">
+              <span class="photo-caption">в столовой</span>
+            </div>
+            <div class="photo-frame rotate-right">
+              <img src="https://picsum.photos/seed/school9/500/350" alt="">
+              <span class="photo-caption">футбол на перемене</span>
+            </div>
+          </div>
+          <p class="page-number">6</p>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content">
+          <div class="photo-frame photo-large rotate-left">
+            <img src="https://picsum.photos/seed/school10/600/700" alt="">
+            <span class="photo-caption">«главное — друзья»</span>
+          </div>
+          <p class="handwriting note small">наш дружный класс ❤</p>
+          <p class="page-number">7</p>
+        </div>
+      </div>
+
+      <!-- ========== РАЗВОРОТ 4: праздники ========== -->
+      <div class="page">
+        <div class="page-content">
+          <h3 class="page-heading">Праздники</h3>
+          <div class="photo-grid grid-2">
+            <div class="photo-frame rotate-right">
+              <img src="https://picsum.photos/seed/school11/500/600" alt="">
+              <span class="photo-caption">Новый год</span>
+            </div>
+            <div class="photo-frame rotate-left">
+              <img src="https://picsum.photos/seed/school12/500/600" alt="">
+              <span class="photo-caption">23 февраля</span>
+            </div>
+          </div>
+          <p class="page-number">8</p>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content">
+          <div class="photo-grid grid-2">
+            <div class="photo-frame rotate-left">
+              <img src="https://picsum.photos/seed/school13/500/600" alt="">
+              <span class="photo-caption">8 марта</span>
+            </div>
+            <div class="photo-frame rotate-right">
+              <img src="https://picsum.photos/seed/school14/500/600" alt="">
+              <span class="photo-caption">день учителя</span>
+            </div>
+          </div>
+          <p class="handwriting note">эти дни запомним надолго</p>
+          <p class="page-number">9</p>
+        </div>
+      </div>
+
+      <!-- ========== РАЗВОРОТ 5: поездки ========== -->
+      <div class="page">
+        <div class="page-content">
+          <h3 class="page-heading">Поездки</h3>
+          <div class="photo-frame photo-large rotate-right">
+            <img src="https://picsum.photos/seed/school15/600/700" alt="">
+            <span class="photo-caption">экскурсия в музей</span>
+          </div>
+          <p class="page-number">10</p>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content">
+          <div class="photo-grid grid-3">
+            <div class="photo-frame photo-small rotate-right">
+              <img src="https://picsum.photos/seed/school16/400/400" alt="">
+            </div>
+            <div class="photo-frame photo-small rotate-left">
+              <img src="https://picsum.photos/seed/school17/400/400" alt="">
+            </div>
+            <div class="photo-frame photo-small rotate-right">
+              <img src="https://picsum.photos/seed/school18/400/400" alt="">
+            </div>
+          </div>
+          <p class="handwriting note">мы видели мир вместе</p>
+          <p class="page-number">11</p>
+        </div>
+      </div>
+
+      <!-- ========== РАЗВОРОТ 6: выпускной ========== -->
+      <div class="page">
+        <div class="page-content">
+          <h3 class="page-heading">Выпускной</h3>
+          <div class="photo-frame photo-large rotate-left">
+            <img src="https://picsum.photos/seed/school19/600/700" alt="">
+            <span class="photo-caption">прощальный вечер</span>
+          </div>
+          <p class="page-number">12</p>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content final-page">
+          <h3 class="page-heading center">Конец одной главы</h3>
+          <p class="handwriting big-quote">«Это были<br>лучшие годы»</p>
+          <div class="ornament">— ✦ —</div>
+          <p class="signature">— наш класс</p>
+          <p class="page-number">13</p>
+        </div>
+      </div>
+
+      <!-- ========== ВНУТРЕННЯЯ СТОРОНА ЗАДНЕЙ ОБЛОЖКИ ========== -->
+      <div class="page" data-density="hard">
+        <div class="page-content endpaper">
+          <p class="dedication small">До новых встреч.</p>
+        </div>
+      </div>
+
+      <!-- ========== ЗАДНЯЯ ОБЛОЖКА ========== -->
+      <div class="page page-cover page-cover-bottom" data-density="hard">
+        <div class="page-content cover-content back-cover">
+          <div class="cover-frame">
+            <div class="cover-divider">✦</div>
+            <p class="back-text">с любовью,<br>наш класс</p>
+            <p class="cover-year">2024 — 2025</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="controls">
+    <button id="prev" class="ctrl-btn" aria-label="Предыдущая страница">‹ Назад</button>
+    <span id="page-info" class="page-info">— / —</span>
+    <button id="next" class="ctrl-btn" aria-label="Следующая страница">Вперёд ›</button>
+  </div>
+
+  <p class="hint">подсказка: можно потянуть за уголок страницы мышкой</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script src="js/album.js"></script>
+</body>
+</html>
